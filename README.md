@@ -40,7 +40,7 @@ A full-stack task management application built with React (TypeScript) frontend 
 
 ### 1. Clone the repository
 ```bash
-git clone <repository-url>
+git clone https://github.com/PiyushKhewalkar/task-management-system
 cd task-management-app
 ```
 
