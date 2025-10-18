@@ -1,5 +1,5 @@
 // API Configuration
-const BASE_URL = import.meta.env.VITE_API_BASE_URL || "http://localhost:3001";
+const BASE_URL = "https://task-management-system-kks2.onrender.com";
 
 // Types
 interface ApiResponse<T = any> {

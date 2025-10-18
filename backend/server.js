@@ -11,9 +11,26 @@ dotenv.config()
 const PORT = process.env.PORT || 3001
 
 const app = express()
-
-// Middleware
-app.use(cors())
+// ✅ Configure allowed origins
+const allowedOrigins = [
+    "http://localhost:5173",   // local frontend
+    "https://task-management-system-pearl-nine.vercel.app/", // production frontend,
+    "https://tms.billiondollardevs.com"
+  ];
+  
+  // ✅ Middleware with CORS options
+  app.use(cors({
+    origin: function (origin, callback) {
+      // allow requests with no origin (like mobile apps, curl)
+      if (!origin) return callback(null, true);
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      } else {
+        return callback(new Error("Not allowed by CORS"));
+      }
+    },
+    credentials: true, // if you need cookies or auth headers
+  }));
 app.use(express.json())
 
 // Routes
