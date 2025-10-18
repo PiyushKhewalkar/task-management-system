@@ -97,7 +97,7 @@ const TaskPage = () => {
                     </button>
                 </Link>
             </div>
-            <TaskFilters tasks={allTasks} onFilterChange={handleFilterChange} />
+            <TaskFilters onFilterChange={handleFilterChange} />
             <TaskList tasks={filteredTasks} onTasksChange={getAllTasks}/>
         </div>
     )

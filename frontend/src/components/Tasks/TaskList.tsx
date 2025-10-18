@@ -30,6 +30,7 @@ const TaskList: React.FC<TaskListProps> = ({ tasks, onTasksChange }) => {
   const handleDelete = async (taskId: string) => {
     try {
       setIsDeleting(true);
+      console.log(isDeleting)
       const response = await tasksAPI.deleteTask(taskId);
       
       if (response.success) {
