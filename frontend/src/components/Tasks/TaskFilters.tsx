@@ -1,16 +1,6 @@
 import { useState } from 'react';
 
-interface Task {
-    _id: string;
-    title: string;
-    status: string;
-    priority: string;
-    description: string;
-    dueDate: string;
-}
-
 interface TaskFiltersProps {
-    tasks: Task[];
     onFilterChange: (filters: {
         search: string;
         priority: string;
@@ -18,7 +8,7 @@ interface TaskFiltersProps {
     }) => void;
 }
 
-const TaskFilters: React.FC<TaskFiltersProps> = ({ tasks, onFilterChange }) => {
+const TaskFilters: React.FC<TaskFiltersProps> = ({ onFilterChange }) => {
     const [search, setSearch] = useState('');
     const [showFilterModal, setShowFilterModal] = useState(false);
     
@@ -132,8 +122,8 @@ const TaskFilters: React.FC<TaskFiltersProps> = ({ tasks, onFilterChange }) => {
 
             {/* Filter Modal */}
             {showFilterModal && (
-                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                    <div className="bg-card border border-border rounded-lg p-6 max-w-md w-full mx-4">
+                <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+                    <div className="bg-card border border-border rounded-lg p-4 sm:p-6 max-w-md w-full">
                         <div className="flex items-center justify-between mb-6">
                             <h3 className="text-lg font-semibold text-card-foreground">Filter Tasks</h3>
                             <button

@@ -30,9 +30,9 @@ const Login = () => {
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-background">
+        <div className="min-h-screen flex items-center justify-center bg-background p-4">
             <div className="w-full max-w-md">
-                <div className="bg-card border border-border rounded-lg p-8 shadow-lg">
+                <div className="bg-card border border-border rounded-lg p-6 sm:p-8 shadow-lg">
                     <div className="text-center mb-8">
                         <h1 className="text-2xl font-bold text-card-foreground">Welcome Back</h1>
                         <p className="text-muted-foreground mt-2">Sign in to your account</p>
