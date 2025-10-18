@@ -13,8 +13,8 @@ const PORT = process.env.PORT || 3001
 const app = express()
 // ✅ Configure allowed origins
 const allowedOrigins = [
-    "http://localhost:5173",   // local frontend
-    "https://task-management-system-pearl-nine.vercel.app/", // production frontend,
+    "http://localhost:5173",
+    "https://task-management-system-pearl-nine.vercel.app", // ✅ no trailing slash
     "https://tms.billiondollardevs.com"
   ];
   
@@ -31,6 +31,7 @@ const allowedOrigins = [
     },
     credentials: true, // if you need cookies or auth headers
   }));
+
 app.use(express.json())
 
 // Routes
